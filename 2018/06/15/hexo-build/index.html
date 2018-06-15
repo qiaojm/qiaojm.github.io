@@ -202,14 +202,9 @@ hex">
 <li><h4 id="在Github上创建xxx-github-io的版本库（xxx为用户名）"><a href="#在Github上创建xxx-github-io的版本库（xxx为用户名）" class="headerlink" title="在Github上创建xxx.github.io的版本库（xxx为用户名）"></a>在Github上创建xxx.github.io的版本库（xxx为用户名）</h4></li>
 <li><h4 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h4><ul>
 <li><p>配置SSH（配置了才能使用SSH地址上传本地代码到Github）</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱地址&quot;（本地创建key到/Users/iqiao/.ssh/id_rsa）</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 到/Users/iqiao/.ssh文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub打开文件，并将内容拷贝到github上新建的SSH中</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱地址&quot;（本地创建key到/Users/iqiao/.ssh/id_rsa）</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 到/Users/iqiao/.ssh文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub打开文件，并将内容拷贝到github上新建的SSH中</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置本地hexo项目的_config.yml文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
@@ -218,10 +213,8 @@ hex">
 <li><p>执行 hexo -g</p>
 </li>
 <li><p>执行 hexo -d</p>
-<ul>
-<li>hexo  -d后报错：ERROR Deployer not found: git</li>
-<li>解决方案：npm install –save hexo-deployer-git</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  -d后报错：ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方案：npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
