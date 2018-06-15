@@ -12,8 +12,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Hexo搭建（Mac）
-基础环境配置
+    <meta name="description" content="1title: Hexo For Mac
+​         Welcome to SmileQ !                                  
+
+####基础环境配置
 
 node环境安装（建议用nvm安装）
 npm
@@ -21,23 +23,19 @@ Git
 hexo
 
 
-初始化一个hexo项目
+####初始化一个hexo项目
 
-hexo文档（https://hexo.io/zh-cn/docs/）
+hexo文档
 
 
-在Github上创建xxx.github.io的版本库（xxx为用户名）
-
-关联Github
-
-配置SSH（配置了才能使用SSH地址上传本地代码到Github）
-
-ssh-keygen -t">
+####在Github上创建xxx.github.io的版本库（xxx为用户名）">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="smileQ">
-    <meta name="twitter:description" content="Hexo搭建（Mac）
-基础环境配置
+    <meta name="twitter:description" content="1title: Hexo For Mac
+​         Welcome to SmileQ !                                  
+
+####基础环境配置
 
 node环境安装（建议用nvm安装）
 npm
@@ -45,23 +43,19 @@ Git
 hexo
 
 
-初始化一个hexo项目
+####初始化一个hexo项目
 
-hexo文档（https://hexo.io/zh-cn/docs/）
+hexo文档
 
 
-在Github上创建xxx.github.io的版本库（xxx为用户名）
-
-关联Github
-
-配置SSH（配置了才能使用SSH地址上传本地代码到Github）
-
-ssh-keygen -t">
+####在Github上创建xxx.github.io的版本库（xxx为用户名）">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="smileQ">
-    <meta property="og:description" content="Hexo搭建（Mac）
-基础环境配置
+    <meta property="og:description" content="1title: Hexo For Mac
+​         Welcome to SmileQ !                                  
+
+####基础环境配置
 
 node环境安装（建议用nvm安装）
 npm
@@ -69,18 +63,12 @@ Git
 hexo
 
 
-初始化一个hexo项目
+####初始化一个hexo项目
 
-hexo文档（https://hexo.io/zh-cn/docs/）
+hexo文档
 
 
-在Github上创建xxx.github.io的版本库（xxx为用户名）
-
-关联Github
-
-配置SSH（配置了才能使用SSH地址上传本地代码到Github）
-
-ssh-keygen -t">
+####在Github上创建xxx.github.io的版本库（xxx为用户名）">
 
     
     <meta name="author" content="qiaoqiao">
@@ -216,8 +204,10 @@ ssh-keygen -t">
   </header>
 
   <section class="post">
-    <h3 id="Hexo搭建（Mac）"><a href="#Hexo搭建（Mac）" class="headerlink" title="Hexo搭建（Mac）"></a>Hexo搭建（Mac）</h3><ul>
-<li><p>基础环境配置</p>
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo For Mac</span><br></pre></td></tr></table></figure>
+<p>​         Welcome to <a href="https://qiaojm.github.io/" target="_blank" rel="noopener">SmileQ</a> !                                  </p>
+<ul>
+<li><p>####基础环境配置</p>
 <ul>
 <li>node环境安装（建议用nvm安装）</li>
 <li>npm</li>
@@ -225,24 +215,27 @@ ssh-keygen -t">
 <li>hexo</li>
 </ul>
 </li>
-<li><p>初始化一个hexo项目</p>
+<li><p>####初始化一个hexo项目</p>
 <ul>
-<li>hexo文档（<a href="https://hexo.io/zh-cn/docs/）" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/）</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo文档</a></li>
 </ul>
 </li>
-<li><p>在Github上创建xxx.github.io的版本库（xxx为用户名）</p>
+<li><p>####在Github上创建xxx.github.io的版本库（xxx为用户名）</p>
 </li>
-<li><p>关联Github</p>
+<li><p>####关联Github</p>
 <ul>
 <li><p>配置SSH（配置了才能使用SSH地址上传本地代码到Github）</p>
 <ul>
-<li>ssh-keygen -t rsa -C “邮箱地址”（本地创建key到/Users/iqiao/.ssh/id_rsa）</li>
-<li>cd 到/Users/iqiao/.ssh文件</li>
-<li>cat id_rsa.pub打开文件，并将内容拷贝到github上新建的SSH中</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span>（本地创建key到/Users/iqiao/.ssh/id_rsa）</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 到/Users/iqiao/.ssh文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub打开文件，并将内容拷贝到github上新建的SSH中</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 <li><p>配置本地hexo项目的_config.yml文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>(注意：初始化生成的文件里就有deploy: ···，记得删除，不然会报错)</p>
 </li>
 <li><p>执行 hexo -g</p>
@@ -255,7 +248,7 @@ ssh-keygen -t">
 </li>
 </ul>
 </li>
-<li><p>成功部署</p>
+<li><p>####成功部署</p>
 <p>打开xxx.github.io看成果吧~</p>
 </li>
 </ul>
@@ -265,7 +258,25 @@ ssh-keygen -t">
 </article>
 
 <section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/06/15/hello-world/" title="Hello World">Hello World</a></h2>
+                <p class="excerpt">
+                
+                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-06-15T02:55:56.483Z" class="post-list__meta--date date">2018-06-15</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/06/15/hello-world/">继续阅读</a></div>
+                       
+            </div>
+        
      
+   
    
   
 </section>
