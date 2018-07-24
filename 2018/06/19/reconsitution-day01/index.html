@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>reconsitution-day01 | smileQ</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="小程序重构（Day01）
+#####关键点1：v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于不依赖子组件状态或临时 DOM 状态,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 key 属性.
+问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="reconsitution-day01 | smileQ">
+    <meta name="twitter:description" content="小程序重构（Day01）
+#####关键点1：v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于不依赖子组件状态或临时 DOM 状态,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 key 属性.
+问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="reconsitution-day01 | smileQ">
+    <meta property="og:description" content="小程序重构（Day01）
+#####关键点1：v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于不依赖子组件状态或临时 DOM 状态,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 key 属性.
+问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复">
+
+    
+    <meta name="author" content="qiaoqiao">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="smileQ" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://yoursite.com/2018/06/19/reconsitution-day01/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 smileQ 的主页"><img src="/images/avatar.jpg" width="80" alt="smileQ logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for smileQ">smileQ</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description"></p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/">文字阁</a></li>
+            
+              <li class="navigation__item"><a href="/">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/">时光机</a></li>
+            
+              <li class="navigation__item"><a href="/">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/qiaojm" title="GitHub" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://github.com/qiaojm" title="Twitter" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-06-19T05:58:18.000Z" class="post-list__meta--date date">2018-06-19</time> &#8226; <span class="post-meta__tags tags">qiao  </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">reconsitution-day01</h1>
+  </header>
+
+  <section class="post">
+    <h4 id="小程序重构（Day01）"><a href="#小程序重构（Day01）" class="headerlink" title="小程序重构（Day01）"></a>小程序重构（Day01）</h4><blockquote>
+<p>#####关键点1：<code>v-for</code> 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于<code>不依赖子组件状态或临时 DOM 状态</code>,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 <code>key</code> 属性.</p>
+<h5 id="问题1：vue的key要求唯一性，但是当好多列表渲染都用-index作为key的话会有重复-？"><a href="#问题1：vue的key要求唯一性，但是当好多列表渲染都用-index作为key的话会有重复-？" class="headerlink" title="问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复 ？"></a>问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复 ？</h5><h6 id="解决方案：对于不同的列表加不同的字符进行拼接"><a href="#解决方案：对于不同的列表加不同的字符进行拼接" class="headerlink" title="解决方案：对于不同的列表加不同的字符进行拼接"></a>解决方案：对于不同的列表加不同的字符进行拼接</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">//将其写成了一个函数，index作为参数</span></span><br><span class="line">&gt; weekKey (index) &#123; </span><br><span class="line">&gt;       <span class="keyword">return</span> <span class="string">`week<span class="subst">$&#123;index&#125;</span>`</span></span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; <span class="comment">//调用</span></span><br><span class="line">&gt; :key=<span class="string">"weekKey(index)"</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h5 id="问题2：怎么判断某一天是星期几？"><a href="#问题2：怎么判断某一天是星期几？" class="headerlink" title="问题2：怎么判断某一天是星期几？"></a>问题2：怎么判断某一天是星期几？</h5><h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.UTC(<span class="number">2018</span>,<span class="number">7</span>,<span class="number">19</span>)).getDay()<span class="comment">//注意月份是0-11，7代表的是八月份</span></span><br><span class="line">&gt; <span class="built_in">console</span>.log(d)<span class="comment">//0,0表示周日</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h5 id="问题3：怎么获取某一月的天数？"><a href="#问题3：怎么获取某一月的天数？" class="headerlink" title="问题3：怎么获取某一月的天数？"></a>问题3：怎么获取某一月的天数？</h5><p>解决方案：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2018</span>, <span class="number">6</span>, <span class="number">0</span>).getDate()/注意月份是<span class="number">0</span><span class="number">-11</span>，<span class="number">6</span>代表的是<span class="number">7</span>月份</span><br><span class="line">&gt; <span class="built_in">console</span>.log(d)<span class="comment">//4(周四)</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h5 id="问题4：快捷键"><a href="#问题4：快捷键" class="headerlink" title="问题4：快捷键"></a>问题4：快捷键</h5><ul>
+<li><p>######Mac下显示隐藏的文件的快捷键（command+shift+.）</p>
+</li>
+<li><p>######vscode</p>
+<ul>
+<li>快速对齐css快捷键（option + shift + f ）</li>
+<li>保存多个文件（option + command + s）</li>
+</ul>
+</li>
+</ul>
+<h5 id="问题5：码云版本问题"><a href="#问题5：码云版本问题" class="headerlink" title="问题5：码云版本问题"></a>问题5：码云版本问题</h5><p>解决方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; 首次提交本地代码到仓库：git remote add origin https://gitee.com/qiaojm/mpvue.git</span><br><span class="line">&gt; 接着执行：git push --<span class="built_in">set</span>-upstream origin master</span><br><span class="line">&gt; 后初始化的.git和之前的冲突，最后执行：git push origin master --force</span><br><span class="line">&gt; 设置本地版本信息：</span><br><span class="line">&gt; git config user.email <span class="string">'179888548@qq.com'</span></span><br><span class="line">&gt; git config user.email <span class="string">'iqiao'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>#####问题6:  vue中数组元素更改不是响应式的，同理对象也是（除非对象属性显示申明，新添的属性没有响应式）？</p>
+<p>解决方案：</p>
+<ul>
+<li><a href="https://github.com/happy-share/vue-demo/commit/cc14c51bdca192770ddd207721d83a6694ef9250" target="_blank" rel="noopener">相关demo</a></li>
+</ul>
+<h5 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h5><ol>
+<li>写入data的数据必须在之前定义，否则将不会是响应式的</li>
+</ol>
+<h5 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝:"></a>拷贝:</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> objA = &#123;<span class="attr">functionaaa</span>:<span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt; <span class="keyword">var</span> objB = &#123;...objA&#125;</span><br><span class="line">&gt; <span class="built_in">console</span>.log(objB,objA)</span><br><span class="line">&gt; objA.functionaaa = <span class="number">000</span></span><br><span class="line">&gt; <span class="built_in">console</span>.log(objB,objA)</span><br><span class="line">&gt; VM731:<span class="number">3</span> &#123;<span class="attr">functionaaa</span>: <span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125; &#123;<span class="attr">functionaaa</span>: <span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt; VM731:<span class="number">5</span> &#123;<span class="attr">functionaaa</span>: <span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125; &#123;<span class="attr">functionaaa</span>: <span class="number">0</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt; <span class="literal">undefined</span></span><br><span class="line">&gt; <span class="keyword">var</span> objA = &#123;<span class="attr">functionaaa</span>:<span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt; <span class="keyword">var</span> objB = objA</span><br><span class="line">&gt; <span class="built_in">console</span>.log(objB,objA)</span><br><span class="line">&gt; objA.functionaaa = <span class="number">000</span></span><br><span class="line">&gt; <span class="built_in">console</span>.log(objB,objA)</span><br><span class="line">&gt; VM735:<span class="number">3</span> &#123;<span class="attr">functionaaa</span>: <span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125; &#123;<span class="attr">functionaaa</span>: <span class="number">111</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt; VM735:<span class="number">5</span> &#123;<span class="attr">functionaaa</span>: <span class="number">0</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125; &#123;<span class="attr">functionaaa</span>: <span class="number">0</span>, <span class="attr">functionbbb</span>: <span class="number">222</span>&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h5 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h5><p><img src="/var/folders/8n/ftyn1s8d7hd8xngd2v28d73c0000gn/T/abnerworks.Typora/image-20180621230702553.png" alt="image-20180621230702553"></p>
+<h5 id="sass"><a href="#sass" class="headerlink" title="sass"></a>sass</h5><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   &lt;button onclick=&quot;window.location.href=&apos;xxx.html&apos;&quot;&gt;点击跳转&lt;/button&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><a href="https://zhidao.baidu.com/question/55744273.html?qbl=relate_question_3&amp;word=button%CC%F8%D7%AA%B5%BD%C1%ED%D2%BB%B8%F6%D2%B3%C3%E6" target="_blank" rel="noopener">更多</a></li>
+</ul>
+</blockquote>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Newer Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/07/24/React-day01/" title="React-day01">React-day01</a></h2>
+                <p class="excerpt">
+                
+                React学习day01
+所有组件类都必须有自己的 render 方法，用于输出组件。
+
+注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+添加组件属性，有一个地方需要注意，就是 class
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-07-24T12:25:28.000Z" class="post-list__meta--date date">2018-07-24</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/07/24/React-day01/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/06/15/hexo-build/" title="hexo-build">hexo-build</a></h2>
+                <p class="excerpt">
+                
+                 Welcome to SmileQ !  This is my first program.If there is any shortage, you are welcome to correct it！Thank you !                           
+
+基础环境配置
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-06-15T10:08:11.000Z" class="post-list__meta--date date">2018-06-15</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/06/15/hexo-build/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 qiaoqiao - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，修改自 <a href="https://github.com/monniya/hexo-theme-new-vno">Monniya</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

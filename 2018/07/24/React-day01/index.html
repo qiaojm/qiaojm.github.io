@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>smileQ</title>
+    <title>React-day01 | smileQ</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,15 +12,30 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="">
+    <meta name="description" content="React学习day01
+所有组件类都必须有自己的 render 方法，用于输出组件。
+
+注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="smileQ">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="React-day01 | smileQ">
+    <meta name="twitter:description" content="React学习day01
+所有组件类都必须有自己的 render 方法，用于输出组件。
+
+注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="smileQ">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="React-day01 | smileQ">
+    <meta property="og:description" content="React学习day01
+所有组件类都必须有自己的 render 方法，用于输出组件。
+
+注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class">
 
     
     <meta name="author" content="qiaoqiao">
@@ -37,7 +52,7 @@
     <link rel="alternate" type="application/rss+xml" title="smileQ" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://yoursite.com"/>
+    <link rel="canonical" href="http://yoursite.com/2018/07/24/React-day01/"/>
 
                  
 </head>
@@ -142,100 +157,69 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-07-24T12:25:28.000Z" class="post-list__meta--date date">2018-07-24</time> &#8226; <span class="post-meta__tags tags">qiao  </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">React-day01</h1>
+  </header>
+
+  <section class="post">
+    <h4 id="React学习day01"><a href="#React学习day01" class="headerlink" title="React学习day01"></a>React学习day01</h4><ul>
+<li><p>所有组件类都必须有自己的 <code>render</code> 方法，用于输出组件。</p>
+</li>
+<li><p>注意，组件类的第一个字母必须大写，否则会报错，比如<code>HelloMessage</code>不能写成<code>helloMessage</code>。另外，组件类只能包含一个顶层标签，否则也会报错。</p>
+</li>
+<li><p>添加组件属性，有一个地方需要注意，就是 <code>class</code> 属性需要写成 <code>className</code> ，<code>for</code> 属性需要写成 <code>htmlFor</code> ，这是因为 <code>class</code> 和 <code>for</code> 是 JavaScript 的保留字。</p>
+</li>
+<li><p><code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>object</code> ；如果有多个子节点，数据类型就是 <code>array</code> 。</p>
+</li>
+<li><p><code>PropTypes</code> 告诉 React，这个 <code>title</code> 属性是必须的，而且它的值必须是字符串</p>
+</li>
+<li><p>有时需要从组件获取真实 DOM 的节点，这时就要用到 <code>ref</code> 属性</p>
+</li>
+<li><p>由于 <code>this.props</code> 和 <code>this.state</code> 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，<code>this.props</code>表示那些一旦定义，就不再改变的特性，而 <code>this.state</code> 是会随着用户互动而产生变化的特性</p>
+</li>
+<li><p>用户在表单填入的内容，属于用户跟组件的互动，所以不能用 <code>this.props</code></p>
+</li>
+</ul>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
     
-  <ol class="post-list">
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/06/19/reconsitution-day01/" title="reconsitution-day01">reconsitution-day01</a></h2>
+                <p class="excerpt">
+                
+                小程序重构（Day01）
+#####关键点1：v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于不依赖子组件状态或临时 DOM 状态,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 key 
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-06-19T05:58:18.000Z" class="post-list__meta--date date">2018-06-19</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/06/19/reconsitution-day01/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
   
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/07/24/React-day01/" title="link to post.title">React-day01</a></h2>
-      <p class="excerpt">
-    
-      React学习day01
-所有组件类都必须有自己的 render 方法，用于输出组件。
+</section>
 
-注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
-
-添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-07-24T12:25:28.000Z" class="post-list__meta--date date">2018-07-24</time> &#8226; <span class="post-list__meta--tags tags">qiao </span><a class="btn-border-small" href="/2018/07/24/React-day01/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
   
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/06/19/reconsitution-day01/" title="link to post.title">reconsitution-day01</a></h2>
-      <p class="excerpt">
-    
-      小程序重构（Day01）
-#####关键点1：v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略,这个默认的模式是高效；但是只适用于不依赖子组件状态或临时 DOM 状态,为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，需要为每项提供一个唯一 key 属性.
-问题1：vue的key要求唯一性，但是当好多列表渲染都用 index作为key的话会有重复 
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-06-19T05:58:18.000Z" class="post-list__meta--date date">2018-06-19</time> &#8226; <span class="post-list__meta--tags tags">qiao </span><a class="btn-border-small" href="/2018/06/19/reconsitution-day01/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/06/15/hexo-build/" title="link to post.title">hexo-build</a></h2>
-      <p class="excerpt">
-    
-       Welcome to SmileQ !  This is my first program.If there is any shortage, you are welcome to correct it！Thank you !                           
-
-基础环境配置
-node环境安装（建议用nvm安装）
-npm
-Git
-hexo
-
-
-初始化一个hexo项目
-hexo
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-06-15T10:08:11.000Z" class="post-list__meta--date date">2018-06-15</time> &#8226; <span class="post-list__meta--tags tags">qiao </span><a class="btn-border-small" href="/2018/06/15/hexo-build/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/06/15/hello-world/" title="link to post.title">Hello World</a></h2>
-      <p class="excerpt">
-    
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-06-15T02:55:56.483Z" class="post-list__meta--date date">2018-06-15</time> &#8226; <span class="post-list__meta--tags tags">qiao </span><a class="btn-border-small" href="/2018/06/15/hello-world/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-  </ol>
-
-
- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    }); 
-    
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</div>
-
 
             <footer class="footer">
     <span class="footer__copyright">
